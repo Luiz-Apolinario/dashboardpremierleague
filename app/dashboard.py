@@ -1,4 +1,5 @@
 import streamlit as st #importando o streamlit como st (so um nome pra abreviar)
+from src.coleta.premier_league import coletar_classificacao
 
 def tela_inicio (): # funcao para mostrar tela inicial
     st.header("Bem-vindo à página inicial!")
@@ -6,6 +7,9 @@ def tela_inicio (): # funcao para mostrar tela inicial
 def tela_classificacao(): # funcao para mostrar tela de classificação
     st.header("📊 Classificação")
     st.write("A tabela da Premier League aparecerá aqui.")
+
+    tabela = coletar_classificacao()
+    st.dataframe(tabela)
 
 st.set_page_config( #informações da aba
     page_title="Dashboard Premier League",
