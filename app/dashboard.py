@@ -8,8 +8,8 @@ def tela_classificacao(): # funcao para mostrar tela de classificação
     st.header("📊 Classificação")
     st.write("A tabela da Premier League aparecerá aqui.")
 
-    tabela = coletar_classificacao()
-    st.dataframe(tabela)
+    tabela = coletar_classificacao() #recebe a tabela da funcao do arquivo premier_league.py
+    st.dataframe(tabela, hide_index=True) #mostra a tabela escondendo a coluna de indice
 
 st.set_page_config( #informações da aba
     page_title="Dashboard Premier League",
